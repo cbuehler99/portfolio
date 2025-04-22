@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christian Bühler – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  
+  <style> body { font-family: 'Inter', sans-serif; }
+        .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+      @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-slide {
+    animation: slide 25s linear infinite;
+  }
+  
+  @keyframes animatedGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .dynamic-gradient {
+    background: linear-gradient(-45deg, #ff00cc, #3333ff, #00ffff, #8e2de2, #4a00e0);
+    background-size: 500% 500%;
+    animation: animatedGradient 12s ease infinite;
+  }
+    
+  @keyframes animatedRedPink {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .dynamic-gradient-redpink {
+    background: linear-gradient(-45deg, #ff0057, #ff2b9e, #ff69b4, #ff3366);
+    background-size: 500% 500%;
+    animation: animatedRedPink 12s ease infinite;
+  }
+
+    @keyframes animatedGradientSide {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .dynamic-gradient-side {
+    background: linear-gradient(-45deg, #39ff14, #00ffa2, #bfff00, #00ffe7);
+    background-size: 500% 500%;
+    animation: animatedGradientSide 14s ease infinite;
+  }
+
+}
+
+
+</style> 
+</head>
+  
+<body class="bg-white text-gray-900 font-[Inter] transition-colors duration-300">
+ <header class="sticky top-0 bg-white z-50 shadow-sm border-b border-gray-200 flex flex-col items-center justify-center gap-4 p-6 max-w-6xl mx-auto">
+  <h1 class="text-xl font-semibold">Christian Bühler</h1>
+  <nav class="flex flex-wrap justify-center gap-6 text-sm">
+    <a href="#expertise" class="hover:underline">Expertise</a>
+    <a href="#it-projects" class="hover:underline">IT-Projekte</a>
+    <a href="#side-projects" class="hover:underline">Side Projects</a>
+    <a href="#contact" class="hover:underline">Kontakt</a>
+  </nav>
+</header>
+
+
+  <main class="px-4 py-20 max-w-6xl mx-auto">
+    <!-- Hero -->
+    <section id="hero" class="text-center mb-32">
+      <div class="text-sm uppercase tracking-widest text-blue-500 font-medium mb-2">Portfolio von</div>
+      <h1 class="text-6xl md:text-7xl font-bold leading-tight animate-fadeIn">Christian Bühler</h1>
+      <p class="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
+        Entwickler. Medienmensch. Möglichmacher.
+      </p>
+    </section>
+
+  <!-- ✅ Tools-Banner -->
+ <section class="fade-up mt-24 mb-16">
+  <h2 class="text-center text-2xl font-semibold text-gray-700 mb-6">Tools & Technologien</h2>
+  <div class="overflow-hidden relative w-full">
+    <div class="animate-slide flex gap-12 whitespace-nowrap text-gray-600 text-sm items-center px-4 py-4">
+
+      <!-- Platzhalter-Tools -->
+      <div class="flex items-center gap-2 min-w-fit">
+        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">J</div>
+        Java
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">A</div>
+        AEM
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">Pr</div>
+        Premiere Pro
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">Ps</div>
+        Photoshop
+      </div>
+
+      <!-- Verfügbare Icons -->
+      <div class="flex items-center gap-2 min-w-fit">
+        <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="w-5 h-5" />
+        Git
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <img src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify" class="w-5 h-5" />
+        Shopify
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <img src="https://cdn.simpleicons.org/confluence/172B4D" alt="Confluence" class="w-5 h-5" />
+        Confluence
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <img src="https://cdn.simpleicons.org/miro/1CA0F5" alt="Miro" class="w-5 h-5" />
+        Miro
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <img src="https://cdn.simpleicons.org/jira/0052CC" alt="Jira" class="w-5 h-5" />
+        Jira
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <img src="https://cdn.simpleicons.org/elasticsearch/005571" alt="Elasticsearch" class="w-5 h-5" />
+        Elasticsearch
+      </div>
+
+      <!-- Neue Platzhalter-Tools -->
+      <div class="flex items-center gap-2 min-w-fit">
+        <div class="w-5 h-5 rounded-full bg-gray-300 text-[9px] font-bold flex items-center justify-center">GPT</div>
+        ChatGPT
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">MS</div>
+        MS Office
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">Ae</div>
+        After Effects
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+    
+    <!-- Expertise -->
+    <section id="expertise" class="fade-up text-center mb-16">
+  <h2 class="text-3xl font-bold mb-4 text-gray">Meine Expertise</h2>
+  <p class="text-gray-300 max-w-xl mx-auto">
+    Ich verbinde technisches Know-how mit kreativen Fähigkeiten – die ideale Kombination für die moderne digitale Welt.
+  </p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+    <!-- Card 1 -->
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+      <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
+      <div class="relative z-10 text-left text-white">
+        <div class="text-3xl mb-4">💻</div>
+        <h3 class="font-semibold text-lg mb-2">Software Development</h3>
+        Ich entwickle moderne Webanwendungen mit Fokus auf Java, AEM und Clean Code.
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+      <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
+      <div class="relative z-10 text-left text-white">
+        <div class="text-3xl mb-4">📈</div>
+        <h3 class="font-semibold text-lg mb-2">Digital Marketing</h3>
+        Ich unterstütze Marken bei Content, Social Media und E-Commerce – praxisnah und kreativ.
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+      <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
+      <div class="relative z-10 text-left text-white">
+        <div class="text-3xl mb-4">🎬</div>
+        <h3 class="font-semibold text-lg mb-2">Media Production</h3>
+        Ich produziere YouTube-Videos und bearbeite Inhalte mit Premiere Pro und Photoshop.
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+      <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
+      <div class="relative z-10 text-left text-white">
+        <div class="text-3xl mb-4">🧠</div>
+        <h3 class="font-semibold text-lg mb-2">UX/UI Design</h3>
+        Ich gestalte benutzerfreundliche Interfaces mit einem Auge für Ästhetik und Usability.
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+      <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
+      <div class="relative z-10 text-left text-white">
+        <div class="text-3xl mb-4">🔀</div>
+        <h3 class="font-semibold text-lg mb-2">Interdisziplinäre Fähigkeiten</h3>
+        Ich vernetze IT, Medien und Kommunikation und erfasse komplexe Themen schnell.
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+      <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
+      <div class="relative z-10 text-left text-white">
+        <div class="text-3xl mb-4">🤝</div>
+        <h3 class="font-semibold text-lg mb-2">Teamwork & Projektarbeit</h3>
+        Ich arbeite strukturiert in agilen Teams und übernehme Verantwortung in Projekten.
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+    
+    <!-- IT-Projekte -->
+    <section id="it-projects" class="fade-up mt-24 text-center">
+  <h2 class="text-4xl font-semibold text-grey mb-4">IT-Projekte</h2>
+  <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12">
+    Eine Auswahl meiner technischen Projekte aus Studium und Freizeit.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+    <!-- Projekt 1 -->
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+      <div class="absolute inset-0 opacity-30 dynamic-gradient-redpink mix-blend-screen"></div>
+      <div class="relative z-10 text-white">
+        <h3 class="text-lg font-semibold mb-2">🎮 2D-Platformer in GameMaker Studio</h3>
+        <p class="text-sm text-gray-300">
+          Ein privater Prototyp eines Platforming-Games mit GameMaker Language – inklusive Sprungphysik, Gegnerverhalten und Levelstruktur.
+        </p>
+      </div>
+    </div>
+
+    <!-- Projekt 2 -->
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+      <div class="absolute inset-0 opacity-30 dynamic-gradient-redpink mix-blend-screen"></div>
+      <div class="relative z-10 text-white">
+        <h3 class="text-lg font-semibold mb-2">🛠️ AEM-Komponentenentwicklung</h3>
+        <p class="text-sm text-gray-300">
+          Entwicklung und Integration von Komponenten für Adobe Experience Manager mit HTL, Java und CSS – Teil meiner beruflichen Praxis.
+        </p>
+      </div>
+    </div>
+
+    <!-- Projekt 3 -->
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+      <div class="absolute inset-0 opacity-30 dynamic-gradient-redpink mix-blend-screen"></div>
+      <div class="relative z-10 text-white">
+        <h3 class="text-lg font-semibold mb-2">🕹️ 3D Jump’n’Run in Unity</h3>
+        <p class="text-sm text-gray-300">
+          Studienprojekt in Unity: Ein spielbarer Prototyp mit Charaktersteuerung, Kamera, Umgebung und Objekten – programmiert in C++.
+        </p>
+      </div>
+    </div>
+
+    <!-- Projekt 4 -->
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+      <div class="absolute inset-0 opacity-30 dynamic-gradient-redpink mix-blend-screen"></div>
+      <div class="relative z-10 text-white">
+        <h3 class="text-lg font-semibold mb-2">🧠 AI-Stimmtraining mit Language Models</h3>
+        <p class="text-sm text-gray-300">
+          Privates Projekt zur Nutzung von KI: Training eines Sprachmodells zur Reproduktion von Gesang mit alternativen Stimmen.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+    <!-- Side Projects -->
+    <section id="side-projects" class="fade-up mt-24 text-center">
+      <h2 class="text-3xl font-bold text-grey mb-6">Side Projects</h2>
+      <p class="text-center text-gray-300 max-w-2xl mx-auto mb-12">
+        Neben meiner beruflichen Laufbahn setze ich eigene Projekte um, in denen ich Kreativität, Unternehmertum und technisches Know-how verbinde.
+      </p>
+    
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+    
+        <!-- Projekt 1: YouTube -->
+        <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+          <div class="absolute inset-0 opacity-30 dynamic-gradient-side mix-blend-screen"></div>
+          <div class="relative z-10 text-white">
+            <h3 class="text-xl font-semibold mb-2">🎥 YouTube-Kanal – @LilaLuigi</h3>
+            <p class="text-sm text-gray-300 mb-4">
+              Auf meinem YouTube-Kanal veröffentliche ich kreative Videos und bin verantwortlich für Konzept, Dreh, Schnitt, Thumbnails und Community-Management.
+            </p>
+            <a href="https://www.youtube.com/@LilaLuigi" target="_blank" class="text-green-400 hover:underline text-sm">Zum Kanal</a>
+          </div>
+        </div>
+    
+        <!-- Projekt 2: Online-Shop -->
+        <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+          <div class="absolute inset-0 opacity-30 dynamic-gradient-side mix-blend-screen"></div>
+          <div class="relative z-10 text-white">
+            <h3 class="text-xl font-semibold mb-2">🛍️ Online-Shop – "Pal-Merch"</h3>
+            <p class="text-sm text-gray-300 mb-4">
+              Mein eigener Merchandise-Shop. Ich bin verantwortlich für Produktgestaltung, Marketing, Kundenkontakt und die gesamte Shop-Administration.
+            </p>
+            <a href="https://pal-merch.store" target="_blank" class="text-green-400 hover:underline text-sm">Zum Shop</a>
+          </div>
+        </div>
+    
+      </div>
+</section>
+
+    
+    <!-- Kontakt -->
+    <section id="contact" class="fade-up mt-24 text-center">
+      <h2 class="text-3xl font-bold text-center mb-6">Kontakt</h2>
+      <p class="text-center text-gray-500 max-w-xl mx-auto">
+        Du möchtest mit mir zusammenarbeiten oder hast Fragen? Dann schreib mir gerne eine E-Mail an
+        <a href="mailto:christian.buehler1999@gmail.com" class="text-blue-600 hover:underline">christian.buehler1999@gmail.com</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="mt-24 text-center text-sm text-gray-400 py-8">
+  © 2025 Christian Bühler · 
+  <a href="mailto:christian.buehler1999@gmail.com" class="text-blue-500 hover:underline">E-Mail schreiben</a>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+  });
+</script>
+
+  
+</body>
+</html>
