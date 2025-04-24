@@ -81,6 +81,30 @@
     animation: animatedGradientSide 14s ease infinite;
   }
 
+    /* Base Glow Behavior */
+    .glow {
+      box-shadow: 0 0 0 transparent;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .glow:hover {
+      transform: translateY(-4px);
+    }
+    
+    /* Expertise = Purple Glow */
+    .glow-expertise:hover {
+      box-shadow: 0 0 15px rgba(180, 0, 255, 0.4), 0 0 30px rgba(180, 0, 255, 0.2);
+    }
+    
+    /* IT Projects = Blue Glow */
+    .glow-it:hover {
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.4), 0 0 30px rgba(0, 191, 255, 0.2);
+    }
+    
+    /* Side Projects = Green Glow */
+    .glow-side:hover {
+      box-shadow: 0 0 15px rgba(57, 255, 20, 0.4), 0 0 30px rgba(57, 255, 20, 0.2);
+    }
+
 }
 
 
@@ -105,7 +129,7 @@
       <div class="text-sm uppercase tracking-widest text-blue-500 font-medium mb-2">Portfolio von</div>
       <h1 class="text-6xl md:text-7xl font-bold leading-tight animate-fadeIn">Christian Bühler</h1>
       <p class="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
-        Entwickler. Medienmensch. Möglichmacher.
+        Kreativer Kopf. Technischer Macher. Digitaler Visionär.
       </p>
     </section>
 
@@ -115,29 +139,8 @@
   <div class="overflow-hidden relative w-full">
     <div class="animate-slide flex gap-12 whitespace-nowrap text-gray-600 text-sm items-center px-4 py-4">
 
-      <!-- Platzhalter-Tools -->
-      <div class="flex items-center gap-2 min-w-fit">
-        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">J</div>
-        Java
-      </div>
-      <div class="flex items-center gap-2 min-w-fit">
-        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">A</div>
-        AEM
-      </div>
-      <div class="flex items-center gap-2 min-w-fit">
-        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">Pr</div>
-        Premiere Pro
-      </div>
-      <div class="flex items-center gap-2 min-w-fit">
-        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">Ps</div>
-        Photoshop
-      </div>
 
-      <!-- Verfügbare Icons -->
-      <div class="flex items-center gap-2 min-w-fit">
-        <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="w-5 h-5" />
-        Git
-      </div>
+      <!--Tools (Icon Web-Library) -->
       <div class="flex items-center gap-2 min-w-fit">
         <img src="https://cdn.simpleicons.org/shopify/96BF48" alt="Shopify" class="w-5 h-5" />
         Shopify
@@ -145,6 +148,10 @@
       <div class="flex items-center gap-2 min-w-fit">
         <img src="https://cdn.simpleicons.org/confluence/172B4D" alt="Confluence" class="w-5 h-5" />
         Confluence
+      </div>
+      <div class="flex items-center gap-2 min-w-fit">
+        <img src="https://cdn.simpleicons.org/git/F05032" alt="Git" class="w-5 h-5" />
+        Git
       </div>
       <div class="flex items-center gap-2 min-w-fit">
         <img src="https://cdn.simpleicons.org/miro/1CA0F5" alt="Miro" class="w-5 h-5" />
@@ -158,20 +165,71 @@
         <img src="https://cdn.simpleicons.org/elasticsearch/005571" alt="Elasticsearch" class="w-5 h-5" />
         Elasticsearch
       </div>
-
-      <!-- Neue Platzhalter-Tools -->
       <div class="flex items-center gap-2 min-w-fit">
-        <div class="w-5 h-5 rounded-full bg-gray-300 text-[9px] font-bold flex items-center justify-center">GPT</div>
+        <img src="https://cdn.simpleicons.org/openai" alt="OpenAI" class="w-5 h-5" />
         ChatGPT
       </div>
-      <div class="flex items-center gap-2 min-w-fit">
-        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">MS</div>
-        MS Office
+
+      <!-- Tools (Inline SVG) -->
+       <div class="flex items-center gap-2 min-w-fit">
+        <svg class="w-6 h-6 fill-current text-yellow-400" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="28" height="28" fill="currentColor"/>
+          <path d="M19 25.2879L21.0615 23.9237C21.2231 24.4313 22.2462 25.6368 23.5385 25.6368C24.8308 25.6368 25.4308 24.931 25.4308 24.463C25.4308 23.1878 24.1112 22.7382 23.4774 22.5223C23.374 22.4871 23.289 22.4581 23.2308 22.4328C23.2009 22.4198 23.1558 22.4025 23.0979 22.3804C22.393 22.1111 19.7923 21.1175 19.7923 18.2373C19.7923 15.065 22.8538 14.7002 23.5462 14.7002C23.9991 14.7002 26.1769 14.7557 27.2615 16.7939L25.2615 18.1898C24.8231 17.3015 24.0946 17.0081 23.6462 17.0081C22.5385 17.0081 22.3077 17.8201 22.3077 18.1898C22.3077 19.227 23.5112 19.6919 24.5273 20.0844C24.7932 20.1871 25.0462 20.2848 25.2615 20.3866C26.3692 20.91 28 21.7666 28 24.463C28 25.8136 26.8672 28.0002 24.0154 28.0002C20.1846 28.0002 19.1692 25.7003 19 25.2879Z" fill="#3E3E3E"/>
+          <path d="M9 25.5587L11.1487 24.1953C11.317 24.7026 11.9713 25.638 12.9205 25.638C13.8698 25.638 14.3557 24.663 14.3557 24.1953V15.0002H16.9982V24.1953C17.041 25.4636 16.3376 28.0002 13.2332 28.0002C10.379 28.0002 9.19242 26.3039 9 25.5587Z" fill="#3E3E3E"/>
+        </svg>
+        Java
       </div>
+
+      
       <div class="flex items-center gap-2 min-w-fit">
-        <div class="w-5 h-5 rounded-full bg-gray-300 text-[10px] font-bold flex items-center justify-center">Ae</div>
+        <svg class="w-6 h-6 fill-current text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M14.58,3H22V19.67L14.58,3M9.42,3H2V19.67L9.42,3M12,9.17l4.67,10.5H13.5l-1.33-3.34H8.75Z" fill="#FF0000"/>
+        </svg>
+        AEM
+      </div>
+      
+      <div class="flex items-center gap-2 min-w-fit">
+        <svg class="w-6 h-6 fill-current text-purple-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19,5V19H5V5H19m0-2H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V5a2,2,0,0,0-2-2Z" fill="#9999FF"/>
+          <g>
+            <path d="M12.47,10.52a2.42,2.42,0,0,1-.79,1.94,3.39,3.39,0,0,1-2.26.67H8.71v2.8H7V8.07H9.55a3.32,3.32,0,0,1,2.17.62A2.23,2.23,0,0,1,12.47,10.52ZM8.71,11.77h.55a1.86,1.86,0,0,0,1.15-.3,1.09,1.09,0,0,0,.38-.89,1.08,1.08,0,0,0-.32-.86,1.49,1.49,0,0,0-1-.28H8.71Z" fill="#9999FF"/>
+            <path d="M16.4,9.81a2.23,2.23,0,0,1,.56,0l-.13,1.53a2.14,2.14,0,0,0-.48-.05,1.73,1.73,0,0,0-1.22.4,1.48,1.48,0,0,0-.44,1.13v3.06H13.05v-6h1.24l.24,1h.08a2.19,2.19,0,0,1,.76-.81A1.83,1.83,0,0,1,16.4,9.81Z" fill="#9999FF"/>
+          </g>
+        </svg>
+        Premiere Pro
+      </div>
+      
+      <div class="flex items-center gap-2 min-w-fit">
+        <svg class="w-6 h-6 fill-current text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19,5V19H5V5H19m0-2H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V5a2,2,0,0,0-2-2Z" fill="#31A8FF"/>
+          <g>
+            <path d="M12.11,10.47a2.41,2.41,0,0,1-.8,1.94,3.36,3.36,0,0,1-2.25.67H8.35v2.79H6.68V8H9.19a3.32,3.32,0,0,1,2.17.62A2.22,2.22,0,0,1,12.11,10.47ZM8.35,11.72h.54A1.82,1.82,0,0,0,10,11.41a1,1,0,0,0,.38-.88,1.08,1.08,0,0,0-.32-.87,1.51,1.51,0,0,0-1-.28H8.35Z" fill="#31A8FF"/>
+            <path d="M17.32,14.09a1.68,1.68,0,0,1-.64,1.41,3.2,3.2,0,0,1-1.92.48,6,6,0,0,1-1.12-.09,4,4,0,0,1-.87-.26V14.28a6.52,6.52,0,0,0,1,.36,4.58,4.58,0,0,0,1,.14c.59,0,.89-.17.89-.51a.44.44,0,0,0-.12-.32,1.5,1.5,0,0,0-.4-.27l-.78-.36a4.61,4.61,0,0,1-1-.54,1.55,1.55,0,0,1-.47-.56,1.89,1.89,0,0,1-.15-.79,1.44,1.44,0,0,1,.62-1.24,3.05,3.05,0,0,1,1.76-.44,4.89,4.89,0,0,1,2.11.48l-.49,1.18a8.28,8.28,0,0,0-.84-.32,2.72,2.72,0,0,0-.8-.12c-.49,0-.73.13-.73.39a.46.46,0,0,0,.24.38,5.56,5.56,0,0,0,1,.48,5,5,0,0,1,1,.53,1.59,1.59,0,0,1,.48.57A1.68,1.68,0,0,1,17.32,14.09Z" fill="#31A8FF"/>
+          </g>
+        </svg>
+        Photoshop
+      </div>
+
+      
+      <div class="flex items-center gap-2 min-w-fit">
+        <svg class="w-6 h-6 fill-current text-purple-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19,5V19H5V5H19m0-2H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V5a2,2,0,0,0-2-2Z" fill="#D291FF"/>
+          <g>
+            <path d="M11.43,15.89,10.86,14H8l-.57,1.87H5.63L8.4,8h2l2.78,7.89Zm-1-3.27c-.53-1.69-.82-2.65-.89-2.87s-.11-.4-.14-.53c-.12.46-.46,1.59-1,3.4Z" fill="#D291FF"/>
+            <path d="M15.92,16a3.13,3.13,0,0,1-2.27-.8,3.06,3.06,0,0,1-.81-2.27,3.33,3.33,0,0,1,.75-2.33,2.69,2.69,0,0,1,2.09-.83,2.61,2.61,0,0,1,2,.73,2.74,2.74,0,0,1,.71,2v.79H14.5a1.52,1.52,0,0,0,.41,1.09,1.43,1.43,0,0,0,1.08.4,4.22,4.22,0,0,0,1-.12,4.56,4.56,0,0,0,1-.36v1.27a4,4,0,0,1-.92.32A5.67,5.67,0,0,1,15.92,16Zm-.23-5.06a1,1,0,0,0-.82.33,1.51,1.51,0,0,0-.34.93h2.3a1.34,1.34,0,0,0-.32-.93A1.06,1.06,0,0,0,15.69,10.94Z" fill="#D291FF"/>
+          </g>
+        </svg>
         After Effects
       </div>
+      
+      <div class="flex items-center gap-2 min-w-fit">
+        <svg class="w-6 h-6 fill-current text-orange-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M3,18l4-1.25V7l7-2V19.5L3.5,18.25,14,22l6-1.25V3.5L14,2,3,5.75Z"/>
+        </svg>
+        MS Office
+      </div>
+
+      
     </div>
   </div>
 </section>
@@ -189,7 +247,7 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
     <!-- Card 1 -->
-    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-expertise">
       <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
       <div class="relative z-10 text-left text-white">
         <div class="text-3xl mb-4">💻</div>
@@ -199,7 +257,7 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-expertise">
       <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
       <div class="relative z-10 text-left text-white">
         <div class="text-3xl mb-4">📈</div>
@@ -209,7 +267,7 @@
     </div>
 
     <!-- Card 3 -->
-    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-expertise">
       <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
       <div class="relative z-10 text-left text-white">
         <div class="text-3xl mb-4">🎬</div>
@@ -219,7 +277,7 @@
     </div>
 
     <!-- Card 4 -->
-    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-expertise">
       <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
       <div class="relative z-10 text-left text-white">
         <div class="text-3xl mb-4">🧠</div>
@@ -229,7 +287,7 @@
     </div>
 
     <!-- Card 5 -->
-    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-expertise">
       <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
       <div class="relative z-10 text-left text-white">
         <div class="text-3xl mb-4">🔀</div>
@@ -239,7 +297,7 @@
     </div>
 
     <!-- Card 6 -->
-    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-expertise">
       <div class="absolute inset-0 opacity-30 dynamic-gradient mix-blend-screen"></div>
       <div class="relative z-10 text-left text-white">
         <div class="text-3xl mb-4">🤝</div>
@@ -261,44 +319,44 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
     <!-- Projekt 1 -->
-    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-it">
       <div class="absolute inset-0 opacity-30 dynamic-gradient-redpink mix-blend-screen"></div>
       <div class="relative z-10 text-white">
         <h3 class="text-lg font-semibold mb-2">🎮 2D-Platformer in GameMaker Studio</h3>
-        <p class="text-sm text-gray-300">
+        <p class="text-sm text-white-300">
           Ein privater Prototyp eines Platforming-Games mit GameMaker Language – inklusive Sprungphysik, Gegnerverhalten und Levelstruktur.
         </p>
       </div>
     </div>
 
     <!-- Projekt 2 -->
-    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-it">
       <div class="absolute inset-0 opacity-30 dynamic-gradient-redpink mix-blend-screen"></div>
       <div class="relative z-10 text-white">
         <h3 class="text-lg font-semibold mb-2">🛠️ AEM-Komponentenentwicklung</h3>
-        <p class="text-sm text-gray-300">
+        <p class="text-sm text-white-300">
           Entwicklung und Integration von Komponenten für Adobe Experience Manager mit HTL, Java und CSS – Teil meiner beruflichen Praxis.
         </p>
       </div>
     </div>
 
     <!-- Projekt 3 -->
-    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-it">
       <div class="absolute inset-0 opacity-30 dynamic-gradient-redpink mix-blend-screen"></div>
       <div class="relative z-10 text-white">
         <h3 class="text-lg font-semibold mb-2">🕹️ 3D Jump’n’Run in Unity</h3>
-        <p class="text-sm text-gray-300">
+        <p class="text-sm text-white-300">
           Studienprojekt in Unity: Ein spielbarer Prototyp mit Charaktersteuerung, Kamera, Umgebung und Objekten – programmiert in C++.
         </p>
       </div>
     </div>
 
     <!-- Projekt 4 -->
-    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+    <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-it">
       <div class="absolute inset-0 opacity-30 dynamic-gradient-redpink mix-blend-screen"></div>
       <div class="relative z-10 text-white">
         <h3 class="text-lg font-semibold mb-2">🧠 AI-Stimmtraining mit Language Models</h3>
-        <p class="text-sm text-gray-300">
+        <p class="text-sm text-white-300">
           Privates Projekt zur Nutzung von KI: Training eines Sprachmodells zur Reproduktion von Gesang mit alternativen Stimmen.
         </p>
       </div>
@@ -317,11 +375,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
     
         <!-- Projekt 1: YouTube -->
-        <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+        <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-side">
           <div class="absolute inset-0 opacity-30 dynamic-gradient-side mix-blend-screen"></div>
           <div class="relative z-10 text-white">
             <h3 class="text-xl font-semibold mb-2">🎥 YouTube-Kanal – @LilaLuigi</h3>
-            <p class="text-sm text-gray-300 mb-4">
+            <p class="text-sm text-white-300 mb-4">
               Auf meinem YouTube-Kanal veröffentliche ich kreative Videos und bin verantwortlich für Konzept, Dreh, Schnitt, Thumbnails und Community-Management.
             </p>
             <a href="https://www.youtube.com/@LilaLuigi" target="_blank" class="text-green-400 hover:underline text-sm">Zum Kanal</a>
@@ -329,11 +387,11 @@
         </div>
     
         <!-- Projekt 2: Online-Shop -->
-        <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 overflow-hidden hover:shadow-xl transition">
+        <div class="relative p-6 rounded-xl border border-gray-700 bg-gray-900 glow glow-side">
           <div class="absolute inset-0 opacity-30 dynamic-gradient-side mix-blend-screen"></div>
           <div class="relative z-10 text-white">
             <h3 class="text-xl font-semibold mb-2">🛍️ Online-Shop – "Pal-Merch"</h3>
-            <p class="text-sm text-gray-300 mb-4">
+            <p class="text-sm text-white-300 mb-4">
               Mein eigener Merchandise-Shop. Ich bin verantwortlich für Produktgestaltung, Marketing, Kundenkontakt und die gesamte Shop-Administration.
             </p>
             <a href="https://pal-merch.store" target="_blank" class="text-green-400 hover:underline text-sm">Zum Shop</a>
